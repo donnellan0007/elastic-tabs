@@ -37,7 +37,7 @@ let selector = document.getElementsByClassName("selector")[0];
 //   };
 // }
 
-selector.style.left = getOffset(activeTab).left + "px";
+selector.style.left = activeTab.offsetLeft + "px";
 selector.style.width = activeWidth + "px";
 selector.style.height = activeTab.innerHeight + "px";
 
