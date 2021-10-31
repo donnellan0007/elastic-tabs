@@ -25,7 +25,7 @@
 // JAVASCRIPT version
 
 let tab = document.getElementsByClassName("tab")[0];
-let activeTab = tab.querySelectorAll(".active")[0];
+let activeTab = tab.querySelector(".active");
 let activeWidth = activeTab.innerWidth;
 let selector = document.getElementsByClassName("selector")[0];
 
