@@ -1,0 +1,48 @@
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Space Grotesk";
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+  font-size: 15px;
+  padding: 0px;
+  list-style: none;
+  background: #fff;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  position: relative;
+}
+nav a {
+  text-decoration: none;
+  color: #4200ff;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  transition-duration: 0.6s;
+}
+
+.active {
+  z-index: 1000;
+  color: white !important;
+}
+
+.selector {
+  display: inline-block;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+  border-radius: 50px;
+  transition-duration: 600ms;
+  transition-timing-function: cubic-bezier(0.34, 0.14, 0.05, 1.01);
+  background: #4200ff;
+}
