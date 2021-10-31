@@ -44,14 +44,14 @@ selector.style.height = activeTab.innerHeight + "px";
 tab.addEventListener("click", (e) => {
   e.preventDefault();
   document.querySelectorAll(".tab a")[0].classList.remove("active");
-  this.classList.add("active");
-  var activeWidth = this.innerWidth;
+  e.target.classList.add("active");
+  var activeWidth = e.target.innerWidth;
   var itemPosition = {
-    top: this.offsetTop,
-    left: this.offsetLeft
+    top: e.target.offsetTop,
+    left: e.target.offsetLeft
   }
   selector.style.left = getOffset(itemPosition).left + "px";
   selector.style.top = getOffset(itemPosition).top + "px";
   selector.style.width = activeWidth + "px";
-  selector.style.height = this.innerHeight + "px";
+  selector.style.height = e.target.innerHeight + "px";
 })
