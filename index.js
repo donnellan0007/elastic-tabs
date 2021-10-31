@@ -26,34 +26,36 @@
 
 let tab = document.getElementsByClassName("tab")[0];
 let activeTab = tab.querySelector(".active");
-let activeWidth = activeTab.innerWidth;
+let activeWidth = activeTab.offsetWidth;
 let selector = document.getElementsByClassName("selector")[0];
 
-// function getOffset(el) {
-//   const rect = el.getBoundingClientRect();
-//   return {
-//     left: rect.left + window.scrollX,
-//     top: rect.top + window.scrollY
-//   };
-// }
-
-selector.style.left = activeTab.offsetLeft + "px";
-selector.style.width = activeWidth + "px";
-selector.style.height = activeTab.innerHeight + "px";
-
-tab.addEventListener("click", (e) => {
+ 
+selector.style.left = activeTab.offsetLeft + "px"; 
+selector.style.width = activeWidth + "px"; 
+selector.style.height = activeTab.offsetHeight + "px"; 
+ 
+tab.addEventListener("click", (e) => { 
   e.preventDefault();
-  console.log(e.target)
-  console.log(document.getElementsByTagName("a"));
-  document.getElementsByTagName("a").classList.remove("active");
-  e.target.classList.add("active");
-  var activeWidth = e.target.innerWidth;
-  var itemPosition = {
-    top: e.target.offsetTop,
-    left: e.target.offsetLeft
+  let anchor = document.getElementsByTagName("a")
+
+  Array.from(document.querySelectorAll("a")).forEach(function(e) {
+    e.classList.remove("active");
+  });
+
+
+  e.target.classList.add("active"); 
+  var activeWidth = e.target.offsetWidth; 
+  var itemPosition = { 
+    top: e.target.offsetTop, 
+    left: e.target.offsetLeft 
   }
-  selector.style.left = itemPosition.offsetLeft + "px";
-  selector.style.top = itemPosition.offsetTop + "px";
-  selector.style.width = activeWidth + "px";
-  selector.style.height = e.target.innerHeight + "px";
+
+  console.log(activeTab.offsetWidth)
+
+
+
+  selector.style.left = itemPosition.left + "px"; 
+  selector.style.top = itemPosition.top + "px"; 
+  selector.style.width = activeWidth + "px"; 
+  selector.style.height = e.target.offsetHeight + "px"; 
 })
