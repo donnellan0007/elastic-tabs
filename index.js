@@ -29,13 +29,13 @@ let activeTab = tab.querySelectorAll(".active")[0];
 let activeWidth = activeTab.innerWidth;
 let selector = document.getElementsByClassName("selector")[0];
 
-function getOffset(el) {
-  const rect = el.getBoundingClientRect();
-  return {
-    left: rect.left + window.scrollX,
-    top: rect.top + window.scrollY
-  };
-}
+// function getOffset(el) {
+//   const rect = el.getBoundingClientRect();
+//   return {
+//     left: rect.left + window.scrollX,
+//     top: rect.top + window.scrollY
+//   };
+// }
 
 selector.style.left = getOffset(activeTab).left + "px";
 selector.style.width = activeWidth + "px";
@@ -50,8 +50,8 @@ tab.addEventListener("click", (e) => {
     top: e.target.offsetTop,
     left: e.target.offsetLeft
   }
-  selector.style.left = getOffset(itemPosition).left + "px";
-  selector.style.top = getOffset(itemPosition).top + "px";
+  selector.style.left = itemPosition.offsetLeft + "px";
+  selector.style.top = itemPosition.offsetTop + "px";
   selector.style.width = activeWidth + "px";
   selector.style.height = e.target.innerHeight + "px";
 })
