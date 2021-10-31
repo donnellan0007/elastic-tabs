@@ -43,6 +43,7 @@ selector.style.height = activeTab.innerHeight + "px";
 
 tab.addEventListener("click", (e) => {
   e.preventDefault();
+  console.log(e.target)
   tab.querySelector("a").classList.remove("active");
   e.target.classList.add("active");
   var activeWidth = e.target.innerWidth;
