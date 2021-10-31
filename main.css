@@ -38,11 +38,13 @@ nav a {
 .selector {
   display: inline-block;
   position: absolute;
-  left: 0px;
-  top: 0px;
+  left: 10px;
+  top: 10px;
   z-index: 1;
   border-radius: 50px;
   transition-duration: 600ms;
   transition-timing-function: cubic-bezier(0.34, 0.14, 0.05, 1.01);
   background: #4200ff;
+  
+  box-shadow: 0 0 0 2px var(--blue-10), 0 0 0 4px blue;
 }
